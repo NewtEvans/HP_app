@@ -1,6 +1,7 @@
 import React from 'react';
 import Characters from './characters/CharacterIndex';
 import CharacterDetail from './characters/CharacterDetail';
+import SpellIndex from './spells/SpellIndex';
 
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -11,6 +12,7 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
+
 
 function App() {
   
@@ -25,6 +27,11 @@ function App() {
                 Characters
               </Link>
             </li>
+            <li className="nav-item">
+              <Link to={"/spells"} className="nav-link">
+                Spells
+              </Link>
+            </li>
           </ul>
         </nav>
 
@@ -35,6 +42,9 @@ function App() {
           </Route>
           <Route path="/character/:id">
             <Route index element={<CharacterDetail />} />
+          </Route>
+          <Route path="/spells">
+            <Route index element={<SpellIndex />} />
           </Route>
         </Routes>
       </div>
