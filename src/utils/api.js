@@ -1,6 +1,6 @@
 const API_URL = "https://hp-api.onrender.com/api/";
 
-const fetchData = (url, requestOption) => {
+/* const fetchData = (url, requestOption) => {
     const apiUrl = `${API_URL}${url}`;
 
     return fetchData(apiUrl, requestOption)
@@ -15,7 +15,7 @@ const fetchData = (url, requestOption) => {
         .catch((error) => {
             throw error;
         });
-};
+}; */
 
  export async function apiGet(url) {
     const apiUrl = `${API_URL}${url}`;
