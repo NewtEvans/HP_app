@@ -1,25 +1,44 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import Characters from './characters/CharacterIndex';
+import CharacterDetail from './characters/CharacterDetail';
 
-import Characters from './characters/Characters'
+import "bootstrap/dist/css/bootstrap.min.css";
 
+import {
+  BrowserRouter as Router,
+  Link,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 
 function App() {
   
-
   return (
-    <div>
-      <h1>Harry Potter Application</h1>
-        <div className='buttons'>
-          <a href="#"><button type='button' className='btn btn-outline-info'>Characters</button></a>
-          <a href="#"><button type='button' className='btn btn-outline-info'>Spells</button></a>
-        </div>
-        <div>
-          <Characters />
-        </div>
-    </div>
+    <Router>
+      <div className="container">
+      <header><h1>Harry Potter Application</h1></header>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link to={"/characters"} className="nav-link">
+                Characters
+              </Link>
+            </li>
+          </ul>
+        </nav>
+
+        <Routes>
+          <Route index element={<Navigate to={"/characters"} />} />
+          <Route path="/characters">
+            <Route index element={<Characters />} />
+          </Route>
+          <Route path="/character/:id">
+            <Route index element={<CharacterDetail />} />
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
