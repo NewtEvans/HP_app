@@ -18,7 +18,7 @@ function App() {
   
   return (
     <Router>
-      <div className="container">
+      <div className="container text-center">
       <header><h1>Harry Potter Application</h1></header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light ">
           <ul className="navbar-nav mr-auto">
