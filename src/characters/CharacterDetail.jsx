@@ -22,14 +22,14 @@ const CharacterDetail = () => {
     return(
       <div>
         {character.map((character, index) => (
-          <ul key={character.name}>
-            <li>{character.name}</li>
-          </ul>
+          <div>
+            <h1>{character.name}</h1>
+            
+          </div>
         ))}
-        
       </div>  
     );
-}
+};
 
 export default CharacterDetail;
 
