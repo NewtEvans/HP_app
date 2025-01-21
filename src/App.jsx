@@ -1,6 +1,7 @@
 import React from 'react';
 import Characters from './characters/CharacterIndex';
 import CharacterDetail from './characters/CharacterDetail';
+import CharacterCard from './characters/CharacterCard';
 import SpellIndex from './spells/SpellIndex';
 
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -18,8 +19,8 @@ function App() {
   
   return (
     <Router>
-      <div className="container">
-      <header><h1>Harry Potter Application</h1></header>
+      <div className="container-fluid">
+      <header className='text-center'><h1>Harry Potter Application</h1></header>
       <nav className="navbar navbar-expand-lg navbar-light bg-light ">
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
@@ -41,7 +42,7 @@ function App() {
             <Route index element={<Characters />} />
           </Route>
           <Route path="/character/:id">
-            <Route index element={<CharacterDetail />} />
+            <Route index element={<CharacterCard />} />
           </Route>
           <Route path="/spells">
             <Route index element={<SpellIndex />} />
