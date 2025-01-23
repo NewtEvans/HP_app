@@ -1,0 +1,11 @@
+.character-card-img {
+    width: 18rem;
+    height: auto;
+    object-fit: cover;
+    
+}
+
+.character-card {
+    width: 18rem;
+    border-radius: 8px;
+}

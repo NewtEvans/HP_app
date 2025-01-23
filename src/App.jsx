@@ -1,10 +1,9 @@
-import React from 'react';
-import Characters from './characters/CharacterIndex';
-import CharacterDetail from './characters/CharacterDetail';
-import CharacterCard from './characters/CharacterCard';
-import SpellIndex from './spells/SpellIndex';
+import React from "react";
+import Characters from "./characters/CharacterIndex";
+import SpellIndex from "./spells/SpellIndex";
 
 import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.js";
 
 import {
   BrowserRouter as Router,
@@ -13,27 +12,42 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-
+import CharacterDetail from "./characters/CharacterDetail";
 
 function App() {
-  
   return (
     <Router>
       <div className="container-fluid">
-      <header className='text-center'><h1>Harry Potter Application</h1></header>
-      <nav className="navbar navbar-expand-lg navbar-light bg-light ">
-          <ul className="navbar-nav mr-auto">
-            <li className="nav-item">
-              <Link to={"/characters"} className="nav-link">
-                Characters
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to={"/spells"} className="nav-link">
-                Spells
-              </Link>
-            </li>
-          </ul>
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+          <Link to={"#"} className="navbar-brand">
+            HP App
+          </Link>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+
+          <div className="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul className="navbar-nav">
+              <li className="nav-item active">
+                <Link className="nav-link" to={"/characters"}>
+                  Characters
+                </Link>
+              </li>
+              <li className="nav-item active">
+                <Link className="nav-link" to={"/spells"}>
+                  Spells
+                </Link>
+              </li>
+            </ul>
+          </div>
         </nav>
 
         <Routes>
@@ -42,7 +56,7 @@ function App() {
             <Route index element={<Characters />} />
           </Route>
           <Route path="/character/:id">
-            <Route index element={<CharacterCard />} />
+            <Route index element={<CharacterDetail />} />
           </Route>
           <Route path="/spells">
             <Route index element={<SpellIndex />} />
@@ -53,4 +67,4 @@ function App() {
   );
 }
 
-export default App
+export default App;
