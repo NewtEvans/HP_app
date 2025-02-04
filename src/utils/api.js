@@ -1,7 +1,7 @@
-export const API_URL = "https://hp-api.onrender.com/api/";
+const API_URL = "https://hp-api.onrender.com/api/";
 
 export async function apiGet(url) {
-  const apiUrl = new URL(`${API_URL}${url}`);
+  const apiUrl = `${API_URL}${url}`;
   try {
     const response = await fetch(apiUrl);
 

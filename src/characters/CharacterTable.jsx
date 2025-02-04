@@ -1,13 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import CharacterCard from "./CharacterCard";
 const CharacterTable = ({ characters }) => {
   return (
-    <div className="card-deck">
-      {characters.map((character) => (
-        <CharacterCard character={character} />
-      ))}
-      {/* <table className="table table-bordered text-center">
+    <div>
+      <table className="table table-bordered text-center">
         <thead className="table-dark">
           <tr>
             <th scope="col">#</th>
@@ -17,20 +13,20 @@ const CharacterTable = ({ characters }) => {
           </tr>
         </thead>
         <tbody>
-          {items.map((item, index) => (
-            <tr key={index + 1}>
+          {characters.map((character, index) => (
+            <tr key={character.id}>
               <td>{index + 1}</td>
               <td>
-                <Link to={`http://localhost:5173/character/${item.id}`}>
-                  {item.name}
+                <Link to={`http://localhost:5173/character/${character.id}`}>
+                  {character.name}
                 </Link>
               </td>
-              <td>{item.house}</td>
-              <td>{item.actor}</td>
+              <td>{character.house}</td>
+              <td>{character.actor}</td>
             </tr>
           ))}
         </tbody>
-      </table> */}
+      </table>
     </div>
   );
 };

@@ -22,11 +22,6 @@ const CharacterCard = ({ character }) => {
             {character.gender}
           </p>
         </div>
-        <button type="button" className="btn btn-warning">
-          <Link to={`http://localhost:5173/character/${character.id}`}>
-            Detail
-          </Link>
-        </button>
         <small className="text-muted">Last updated 3 mins ago</small>
       </div>
     </div>
